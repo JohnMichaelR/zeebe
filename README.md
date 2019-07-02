@@ -16,15 +16,14 @@ Zeebe scales orchestration of workers and microservices using visual workflows. 
 * Export workflow data for monitoring and analysis
 * Engage with an active community 
 
-[Learn more](https://docs.zeebe.io/basics/README.html)
+[Learn more at zeebe.io](https://zeebe.io)
 
 ## DISCLAIMER
 
 Zeebe is currently a developer preview and not meant for production use. To learn more, please visit the [roadmap](https://zeebe.io/roadmap).
 
-## Links
+## Helpful Links
 
-* [Website](https://zeebe.io)
 * [Blog](https://zeebe.io/blog)
 * [Documentation Home](https://docs.zeebe.io)
 * [Issue Tracker](https://github.com/zeebe-io/zeebe/issues)
