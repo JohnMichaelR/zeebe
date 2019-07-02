@@ -3,9 +3,9 @@
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.zeebe/zeebe-distribution/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.zeebe/zeebe-distribution)
 
-Zeebe scales orchestration of workers and microservices using visual workflows. Zeebe is horizontally scalable and fault tolerant so that you can reliably process all your transactions as they happen.
+Zeebe provides visibility into and control over business processes that span multiple microservices. 
 
-**Why Zeebe**
+**Why Zeebe?**
 
 * Define workflows visually in BPMN 2.0
 * Choose your programming language 
