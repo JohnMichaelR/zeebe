@@ -29,6 +29,7 @@ import io.zeebe.engine.state.ZeebeState;
 import io.zeebe.logstreams.log.LogStream;
 import io.zeebe.logstreams.state.StateSnapshotController;
 import io.zeebe.msgpack.UnpackedObject;
+import io.zeebe.protocol.impl.record.CopiedRecord;
 import io.zeebe.protocol.record.RecordType;
 import io.zeebe.protocol.record.intent.Intent;
 import io.zeebe.protocol.record.intent.WorkflowInstanceIntent;
@@ -251,6 +252,14 @@ public class StreamProcessorRule implements TestRule {
         .recordType(RecordType.EVENT)
         .intent(intent)
         .event(value)
+        .write();
+  }
+
+  public long writeCompleteRecord(CopiedRecord copiedRecord, long sourceRecordPosition) {
+    return streams
+        .newRecord(getLogName(copiedRecord.getPartitionId()))
+        .record(copiedRecord)
+        .sourceRecordPosition(sourceRecordPosition)
         .write();
   }
 

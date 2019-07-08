@@ -80,7 +80,7 @@ public class EngineRule extends ExternalResource {
   private final RecordingExporterTestWatcher recordingExporterTestWatcher =
       new RecordingExporterTestWatcher();
 
-  private final StreamProcessorRule environmentRule;
+  protected final StreamProcessorRule environmentRule;
 
   private final int partitionCount;
 
@@ -107,7 +107,7 @@ public class EngineRule extends ExternalResource {
     startProcessors();
   }
 
-  private void startProcessors() {
+  protected void startProcessors() {
     final DeploymentRecord deploymentRecord = new DeploymentRecord();
     final UnsafeBuffer deploymentBuffer = new UnsafeBuffer(new byte[deploymentRecord.getLength()]);
     deploymentRecord.write(deploymentBuffer, 0);

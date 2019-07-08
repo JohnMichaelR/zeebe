@@ -53,6 +53,7 @@ import io.zeebe.logstreams.state.StateSnapshotController;
 import io.zeebe.logstreams.state.StateStorage;
 import io.zeebe.msgpack.UnpackedObject;
 import io.zeebe.protocol.Protocol;
+import io.zeebe.protocol.impl.record.CopiedRecord;
 import io.zeebe.protocol.impl.record.RecordMetadata;
 import io.zeebe.protocol.record.RecordType;
 import io.zeebe.protocol.record.ValueType;
@@ -322,6 +323,15 @@ public class TestStreams {
       this.logStream = logStream;
 
       metadata.protocolVersion(Protocol.PROTOCOL_VERSION);
+    }
+
+    public FluentLogWriter record(CopiedRecord record) {
+      intent(record.getIntent());
+      key(record.getKey());
+      sourceRecordPosition(record.getSourceRecordPosition());
+      recordType(record.getRecordType());
+      event(record.getValue());
+      return this;
     }
 
     public FluentLogWriter intent(final Intent intent) {
